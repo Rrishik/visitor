@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Visitors Management System</title>
+    <meta charset="UTF-8">
+</head>
+<!-- Below is the initialization snippet for my Firebase project. It will vary for each project -->
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css">
+<script type="text/javascript" src="scripts/auth.js"></script>
+
+<link rel="stylesheet" href="css/signin.css">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Lobster|Pacifico|Ubuntu+Condensed|Great+Vibes|Changa" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var uiConfig = {
+    signInSuccessUrl: 'member_page.html',
+    signInOptions: [
+        // Specify providers you want to offer your users.
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    // Terms of service url can be specified and will show up in the widget.
+    tosUrl: '<your-tos-url>'
+};
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+<!-- Include a simple background image & and title -->
+<div></div>
+<body>
+    <div class="header">
+        <h1>Visitor Management System</h1>
+    </div>
+    <div class="background-image">
+        <img src="images/meet.png" alt="Visitor">
+    </div>
+</div>
+<div id="firebaseui-auth-container"></div>
+</body>
+</html>
